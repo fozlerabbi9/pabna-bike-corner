@@ -1,0 +1,19 @@
+.dynamic-page-style {
+    padding: 0 100px;
+    padding-top: 100px;
+    /* background-color: aqua; */
+}
+.dynamic-data-style{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+.dynamic-data-style img{
+    width: 300px;
+    background-color: aqua;
+    padding: 10px;    
+}
+.dynamic-data-style .info{
+    padding: 10px;
+}

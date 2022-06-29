@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Singledata.css';
 
 const SingleData = ({ data }) => {
-    const { id, name, image, description, price, quentity, suppliername } = data;
+    const { _id, name, image, description, price, quentity, suppliername } = data;
+    const naviget = useNavigate();
+
+    const getidFun = (id) =>{
+        console.log(id)
+        naviget(`/dynamicPage/${id}`)
+    }
     return (
         <div>
             <div className="child-data-style col">
@@ -17,7 +24,7 @@ const SingleData = ({ data }) => {
                     <p>Sone-Info : {description}</p>
                     <p className="supplier-name">Suplieer : {suppliername}</p>
                 </div>
-                <button>Update</button>
+                <button onClick={()=> getidFun(_id)}>Update</button>
             </div>
 
         </div>

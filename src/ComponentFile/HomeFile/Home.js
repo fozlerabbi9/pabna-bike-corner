@@ -23,7 +23,7 @@ const Home = () => {
             <div className="parent-data-div row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 {
                     data.slice(0, 6).map(Sdata => <SingleData
-                        key={Sdata.id}
+                        key={Sdata._id}
                         data={Sdata}
                     ></SingleData>)
                 }
