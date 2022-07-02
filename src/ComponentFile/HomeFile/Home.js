@@ -14,8 +14,11 @@ const Home = () => {
                 </div>
 
                 <div className="text-div">
-                    <h2>Woner : Fozle Rabbi</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quo!</p>
+                    <div className='text-chile-div'>
+                        <h2>Woner : Fozle Rabbi</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quo!</p>
+                        <button>Facebook</button>
+                    </div>
                 </div>
 
             </div>

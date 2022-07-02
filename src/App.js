@@ -7,6 +7,9 @@ import Bloag from './ComponentFile/BloagFIle/Bloag';
 import Registation from './ComponentFile/RegistationFIle/Registation';
 import Login from './ComponentFile/LoginFIle/Login';
 import DynamicPage from './ComponentFile/HomeFile/DynamicPage';
+import ManageData from './ComponentFile/ManageDataFile/ManageData';
+import Additem from './ComponentFile/AddItemFile/Additem';
+import Requireauth from './ComponentFile/RequireAuthFile/Requireauth';
 
 
 function App() {
@@ -17,9 +20,27 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path="/blogs" element={<Bloag></Bloag>}></Route>
-        <Route path="/registation" element={<Registation></Registation>}></Route>
+
+        <Route path="/manageData" element={
+          <Requireauth>
+            <ManageData></ManageData>
+          </Requireauth>
+        }></Route>
+
+        <Route path="/addItem" element={
+          <Requireauth>
+            <Additem></Additem>
+          </Requireauth>
+        }></Route>
+
+        <Route path='/dynamicPage/:dataId' element={
+          <Requireauth>
+            <DynamicPage></DynamicPage>
+          </Requireauth>
+        }></Route>
+
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path='/dynamicPage/:dataId' element={<DynamicPage></DynamicPage>}></Route>
+        <Route path="/registation" element={<Registation></Registation>}></Route>
 
       </Routes>
     </div>

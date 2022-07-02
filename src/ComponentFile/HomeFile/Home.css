@@ -8,20 +8,35 @@
     height: 80%;
     position: relative;
 }
-.banner img{
+
+.banner img {
     width: 100%;
     height: 100%;
 }
-.text-div{
+
+.text-div {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 0;
     left: 0;
     color: white;
 }
-.parent-data-div{
-    background-color: rgba(30, 44, 243,0.4);
+
+.text-div .text-chile-div {
+    width: 48%;
+    box-shadow: 2px 2px 5px white;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to left , rgba(248, 54, 54, 0.3), rgba(250, 250, 44,0.3));
+    padding: 15px 25px;
+    text-align: left;
+}
+
+.parent-data-div {
+    background-color: rgba(30, 44, 243, 0.4);
     padding: 50px 20px;
 }

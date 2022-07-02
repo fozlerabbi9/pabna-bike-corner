@@ -11,6 +11,9 @@ const DynamicPage = () => {
     const [countQuintity, setCountNumber] = useState(0);
     const [addNumber, setAddNumber] = useState(0);
 
+
+
+
     useEffect(() => {
         const quintityy = parseInt(quentity);
         setCountNumber(quintityy)
@@ -30,7 +33,7 @@ const DynamicPage = () => {
         fetch(url, {
             method: "PUT",
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
             },
             body: JSON.stringify(updateData)
         })

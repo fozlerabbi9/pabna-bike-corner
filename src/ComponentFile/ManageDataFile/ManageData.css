@@ -1,0 +1,44 @@
+.data-manage-style {
+    padding-top: 55px;
+}
+
+.all-data-style .teble-style tbody tr {
+    align-items: center;
+}
+
+.all-data-style img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.all-data-style .teble-style tbody tr .delete-button, .edit-button {
+    padding: 3px 8px;
+    color: red;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s;
+    border: 0;
+}
+.all-data-style .teble-style tbody tr .edit-button  {
+    color: aqua;
+    background-color: green;
+}
+.all-data-style .teble-style tbody tr .edit-button:hover{
+    color: black;
+    background-color: aqua;
+}
+
+.all-data-style .teble-style tbody tr .delete-button:hover {
+    background-color: red;
+    border: 0;
+    color: white;
+}
+
+.teble-style thead tr .edit-text {
+    color: aqua;
+}
+
+.teble-style thead tr .delete-text {
+    color: red;
+}
