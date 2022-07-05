@@ -34,10 +34,10 @@ const ManageData = () => {
                             data.map(Sdata =>
                                 <tr key={Sdata._id}>
                                     <td> <img src={Sdata?.image} alt="" /> </td>
-                                    <td>{Sdata?.name}</td>
-                                    <td>{Sdata?.price} : Lakh</td>
-                                    <td>{Sdata?.quentity}</td>
-                                    <td>{Sdata?.suppliername}</td>
+                                    <td>N : {Sdata?.name}</td>
+                                    <td>P : {Sdata?.price} / Lakh</td>
+                                    <td>Q : {Sdata?.quentity}</td>
+                                    <td>SN : {Sdata?.suppliername}</td>
                                     <td> <button className='edit-button'>edit</button></td>
                                     <td> <button onClick={()=> deleteFun(Sdata._id)} className='delete-button'>X</button></td>
                                 </tr>)

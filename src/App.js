@@ -10,6 +10,8 @@ import DynamicPage from './ComponentFile/HomeFile/DynamicPage';
 import ManageData from './ComponentFile/ManageDataFile/ManageData';
 import Additem from './ComponentFile/AddItemFile/Additem';
 import Requireauth from './ComponentFile/RequireAuthFile/Requireauth';
+import MyItem from './ComponentFile/MyitemFile/MyItem';
+
 
 
 function App() {
@@ -36,6 +38,12 @@ function App() {
         <Route path='/dynamicPage/:dataId' element={
           <Requireauth>
             <DynamicPage></DynamicPage>
+          </Requireauth>
+        }></Route>
+
+        <Route path='/myItem' element={
+          <Requireauth>
+            <MyItem></MyItem>
           </Requireauth>
         }></Route>
 

@@ -1,26 +1,81 @@
 .child-data-style {
-    background-color: aqua;
     margin: 0 auto;
-    width: 95%;
-    height: 100%;
+    width: 85%;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.child-data-style:hover {
+    box-shadow: 5px 8px 20px gray;
+
 }
 
 .child-data-style .img {
     margin: 10px auto;
-    width: 90%;
-    height: 50%;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
 }
 
 .child-data-style .img img {
     width: 100%;
     height: 100%;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.5s;
 }
 
-.child-data-styl .info h6, h5, p {
+.child-data-style:hover .img img {
+    transform: scale(1.2);
+}
+
+.hr {
+    width: 90%;
+    height: 2px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, yellow, red);
+    /* background-color: red; */
+}
+
+.child-data-style .text-info {
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.child-data-style .text-info h6, h5, p {
     text-align: left;
+    margin: 0;
+    padding: 0 8px;
+    color: black;
 }
 
+.child-data-style .text-info h6 {
+    padding-top: 10px;
+    color: black;
+}
 
+.child-data-style .text-info h6 {
+    margin-top: 20px;
+    color: red;
+}
+
+.child-data-style .text-info span {
+    font-weight: 500;
+    font-size: 14px;
+    /* margin-right: 5px; */
+}
+
+.child-data-style .text-info {
+    padding: 0 10px;
+}
+
+.child-data-style button {
+    width: 100%;
+    border: 0;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 0 0 5px 5px;
+}
 
 
 

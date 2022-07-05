@@ -1,13 +1,19 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import auth from '../../firebase.init';
 import './Additem.css';
 
 const Additem = () => {
     const { register, handleSubmit } = useForm();
+    const [user] = useAuthState(auth);
+    const email = user.email;
+    // console.log(user.email);
+    console.log(email);
 
     const onSubmit = data => {
-        console.log(data)
-        const url = `http://localhost:5000/bikeData`;
+        // console.log(data)
+        const url = `http://localhost:5000/bikeData?email=${email}`;
         fetch(url, {
             method: "POST",
             headers: {
@@ -21,10 +27,9 @@ const Additem = () => {
             })
     };
     // const { _id, name, image, description, price, quentity, suppliername } = data;
-    //name :  Reign Advanced Pro 29 1
-
+    //name :  BMW K1300R
     // url :https://i.ibb.co/k4q3S1V/giant-reign-advanced-pro-29-1-381405-1.jpg
-    //descrioption : When you’re racing enduro, the terrain comes at you fast. This pro-level shredder gives you the confidence to stay cool when things get rowdy
+    //descrioption : BMW K1300R is a naked bike that was launched by the German automaker in 2008 and was discontinued after 2015. BMW introduced the K1300R to replace the existing K1200R and was quite successful in doing so.
 
     return (
         <div className='main-form-style'>
