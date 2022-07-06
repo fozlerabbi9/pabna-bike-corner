@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useDataLoad from '../HookFile/useDataLoad';
 import './Home.css';
 import SingleData from './SingleData';
@@ -6,15 +6,23 @@ import { FiCpu } from "react-icons/fi";
 import { AiFillDropboxCircle, AiFillHighlight, AiFillIeCircle } from "react-icons/ai";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import BikerClubPage from './BikerClubFile/BikerClubPage';
+import GoogleMap from '../GoogleMapFile/GoogleMapjs';
+import Contact from '../ContactFIle/Contact';
+import Aos from 'aos';
+// import 'aos/dist/aos.css';
 
 
 
 const Home = () => {
     const [data, setData] = useDataLoad();
+    useEffect(()=> {
+        Aos.init({duration : 1500})
+    }, []);
+
     return (
         <div className='main-home-style'>
 
-            <div className="banner">
+            <div data-aos="zoom-in" className="banner">
                 <div className="img">
                     <img src="https://i.ibb.co/sgP7Qch/banner-images-162476992964842.jpg" alt="" />
                 </div>
@@ -29,7 +37,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="info-card-section">
+            <div  data-aos="fade-up" className="info-card-section">
                 <div className="card-one">
                     <h2><AiFillDropboxCircle className='fav-icons'></AiFillDropboxCircle> </h2>
                     <h6>Professional Assembly</h6>
@@ -75,6 +83,11 @@ const Home = () => {
             <div className="biker-club-section">
                 <BikerClubPage></BikerClubPage>
             </div>
+
+            <div className="google-map-section">
+                {/* <GoogleMap></GoogleMap> */}
+            </div>
+            <Contact></Contact>
 
         </div>
     );

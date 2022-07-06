@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Singledata.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const SingleData = ({ data }) => {
     const { _id, name, image, description, price, quentity, suppliername } = data;
     const naviget = useNavigate();
+    useEffect(()=>{
+        Aos.init({duration : 2000})
+    },[])
 
     const getidFun = (id) => {
         console.log(id)
@@ -12,7 +17,7 @@ const SingleData = ({ data }) => {
     }
     return (
         <div>
-            <div className="child-data-style col">
+            <div data-aos="zoom-in" className="child-data-style col">
                 <div className="img">
                     <img className='img-fluid' src={image} alt="" />
                 </div>

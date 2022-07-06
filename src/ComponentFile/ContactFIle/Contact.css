@@ -1,0 +1,65 @@
+.main-contact {
+    padding: 0px 50px 50px 50px;
+}
+.main-contact h2{
+    border-bottom: 3px solid red;
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    border-radius: 30px;
+    box-shadow: 2px 0px 2px yellow;
+    padding: 2px ;
+}
+.img-card .card {
+    border: 0;
+    box-shadow: 2px 2px 5px gray;
+    overflow: hidden;
+}
+.img-card .card img{
+    transition: all 0.5s;
+    height: 330px;
+}
+.img-card .card:hover img{
+    transform: scale(1.2);
+}
+
+.email-div form {
+    padding: 20px 10px;
+}
+
+.email-div form textarea, input {
+    width: 100%;
+    margin: 10px 0;
+    border: 0;
+    box-shadow: 2px 2px 5px gray;
+    padding: 5px 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+.email-div form textarea:focus, input:focus{
+    box-shadow: 1px 1px 5.5px aqua;
+}
+
+.email-div form textarea {
+    margin: 5px 0 0 0;
+}
+.email-div form button{
+    width: 100%;
+    border: 0;
+    margin: 5px 0 0 0 ;
+    border-radius: 5px;
+    padding: 5px;
+    background-image: linear-gradient(to top, rgba(252, 21, 21,0.8), rgba(247, 247, 22,0.8));
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px black;
+    font-style: italic;
+    transition: all 0.5s;
+}
+.email-div form button:hover{
+    color: red;
+    background-image: linear-gradient(to left, rgba(252, 21, 21,0.8), rgba(247, 247, 22,0.8));
+    box-shadow: 2px 2px 5px gray;
+    text-shadow: 1px 1px 2px white;
+    font-weight: 600;
+}

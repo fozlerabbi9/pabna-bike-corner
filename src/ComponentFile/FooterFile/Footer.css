@@ -1,0 +1,51 @@
+.footer-style {
+    padding: 0 30px 30px;
+    margin: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.footer-style .col .card {
+    text-align: left;
+    padding-left: 50%;
+    background-color: transparent;
+}
+
+.footer-style .col .card p, h3 {
+    color: white;
+    padding: 0;
+}
+
+.footer-style .col .card .icon-list {
+    color: white;
+    display: flex;
+    list-style: none;
+    /* justify-content: space-around; */
+    /* justify-content: center; */
+}
+
+.footer-style .col .card .icon-list li {
+    margin-left: 8px;
+    background-color: white;
+    color: black;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.5s;
+}
+.footer-style .col .card .icon-list li:first-child{
+    margin: 0;
+}
+.footer-style .col .card .icon-list li:hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid aqua;
+
+    /* background-color: aqua;
+    box-shadow: 1px 1px 10px red; */
+}

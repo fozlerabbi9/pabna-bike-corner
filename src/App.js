@@ -11,7 +11,8 @@ import ManageData from './ComponentFile/ManageDataFile/ManageData';
 import Additem from './ComponentFile/AddItemFile/Additem';
 import Requireauth from './ComponentFile/RequireAuthFile/Requireauth';
 import MyItem from './ComponentFile/MyitemFile/MyItem';
-
+import Footer from './ComponentFile/FooterFile/Footer';
+import 'aos/dist/aos.css';
 
 
 function App() {
@@ -51,6 +52,8 @@ function App() {
         <Route path="/registation" element={<Registation></Registation>}></Route>
 
       </Routes>
+
+      <Footer></Footer>
     </div>
   );
 }
