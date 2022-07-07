@@ -8,7 +8,7 @@ const SingleData = ({ data }) => {
     const { _id, name, image, description, price, quentity, suppliername } = data;
     const naviget = useNavigate();
     useEffect(()=>{
-        Aos.init({duration : 2000})
+        Aos.init({duration : 1500})
     },[])
 
     const getidFun = (id) => {

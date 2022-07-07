@@ -18,6 +18,9 @@ const Home = () => {
     useEffect(()=> {
         Aos.init({duration : 1500})
     }, []);
+    // const btsbutton = (e) =>{
+    //     console.log("bts button")
+    // }
 
     return (
         <div className='main-home-style'>
@@ -30,6 +33,7 @@ const Home = () => {
                     <div className='text-chile-div'>
                         <h2>Welcome to Pabna Bike Corner</h2>
                         <h3>Woner : Fozle Rabbi</h3>
+                        {/* <button onClick={()=> btsbutton()} type="button" class="btn btn-primary">Primary</button> */}
                         <div className="button">
                             <button> <RiFacebookBoxFill  className='fav-icons-fb'></RiFacebookBoxFill> Facebook</button>
                         </div>

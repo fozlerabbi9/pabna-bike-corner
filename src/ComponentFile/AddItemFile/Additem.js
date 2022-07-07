@@ -34,13 +34,13 @@ const Additem = () => {
     return (
         <div className='main-form-style'>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder='name' type="text" {...register("name")} /> <br />
-                <input placeholder='Email' type="text" {...register("email")} /> <br />
-                <input placeholder='URL' type="text" {...register("image")} /> <br />
-                <input placeholder='price' type="number" {...register("price")} /> <br />
-                <input placeholder='quentity' type="number" {...register("quentity")} /> <br />
-                <input placeholder='supplier-Name' type="text" {...register("suppliername")} /> <br />
-                <textarea placeholder='description' type="text" {...register("description")} /> <br />
+                <input placeholder='name' type="text" {...register("name")} required /> <br />
+                <input placeholder='Email' type="text" {...register("email")} required /> <br />
+                <input placeholder='URL' type="text" {...register("image")} required /> <br />
+                <input placeholder='price' type="number" {...register("price")} required /> <br />
+                <input placeholder='quentity' type="number" {...register("quentity")} required /> <br />
+                <input placeholder='supplier-Name' type="text" {...register("suppliername")} required /> <br />
+                <textarea placeholder='description' type="text" {...register("description")} required /> <br />
                 <input type="submit" value="SUBMIT" />
             </form>
         </div>

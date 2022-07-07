@@ -1,8 +1,11 @@
+// import { Carousel } from 'bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useDynamicData from '../HookFile/useDynamicData';
 import './DynamicPage.css';
+import useDataLoad from '../HookFile/useDataLoad';
 
 const DynamicPage = () => {
     const { dataId } = useParams();
@@ -10,7 +13,9 @@ const DynamicPage = () => {
     const { name, image, description, price, quentity, suppliername } = dynamicData;
     const [countQuintity, setCountNumber] = useState(0);
     const [addNumber, setAddNumber] = useState(0);
+    const [data] = useDataLoad([])
 
+    // console.log(data?.image)
 
 
 
@@ -81,25 +86,57 @@ const DynamicPage = () => {
     return (
         <div className='dynamic-page-style'>
 
-            <div className="dynamic-data-style">
-                <img src={image} alt="" />
-
-                <div className="info">
-                    <p>name : {name}</p>
-                    <p>price : {price} Lakh</p>
-                    <p>quentity : {countQuintity}</p>
-                    <p>description : {description}</p>
-                    <p>suppliername : {suppliername}</p>
-                </div>
+            <div className="carousel">
+                <Carousel className='main-carousel'>
+                    {
+                        data.map(sdata => <Carousel.Item interval={3000} className="carousel-item" key={sdata._id} >
+                            <img className="img-style" src={sdata.image}
+                                alt="First slide"
+                            />
+                        </Carousel.Item>)
+                    }
+                    {/* <Carousel.Item interval={2000} className="carousel-item" >
+                        <img className="img-style" src="https://monochrome-watches.com/wp-content/uploads/2022/04/William-Wood-Watches-Saltire-Motorcycles-Always-Ready-Motorbike-Custom-Indian-Scout-4.jpg"
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item interval={2000} className="carousel-item">
+                        <img
+                            className="img-style"
+                            src="https://cdn.wallpapersafari.com/70/1/Im1QrM.jpg"
+                            alt="Second slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item interval={2000} className="carousel-item">
+                        <img
+                            className="img-style"
+                            src="https://wallpaperaccess.com/full/217666.jpg"
+                            alt="Third slide"
+                        />
+                    </Carousel.Item> */}
+                </Carousel>
             </div>
-            <button onClick={() => updateDataFun(countQuintity)}>Delivered</button>
-            <h4>Quintity = {countQuintity}</h4>
 
-            <div className="simple-form">
-                <form onSubmit={addQuintity}>
-                    <Form.Control onBlur={getNumber} type="number" placeholder="number" />
-                    <Button type="submit"> Submit </Button>
-                </form>
+            <div className="count-div">
+                <div className="dynamic-data-style">
+                    <img className='img-fluid' src={image} alt="" />
+                    <div className="info">
+                        <p>name : {name}</p>
+                        <p>price : {price} Lakh</p>
+                        <p>quentity : {countQuintity}</p>
+                        <p>description : {description}</p>
+                        <p>suppliername : {suppliername}</p>
+                    </div>
+                </div>
+
+                <div className="simple-form">
+                    <h4>Quintity = {countQuintity}</h4>
+                    <button className='button' onClick={() => updateDataFun(countQuintity)}>Delivered</button>
+                    <form onSubmit={addQuintity}>
+                        <Form.Control onBlur={getNumber} type="number" placeholder="Add Quintity" required />
+                        <Button type="submit"> Added </Button>
+                    </form>
+                </div>
             </div>
 
         </div >
