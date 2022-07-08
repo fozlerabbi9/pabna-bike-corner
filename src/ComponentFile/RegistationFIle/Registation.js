@@ -3,7 +3,7 @@ import './Registation.css';
 import { useForm } from 'react-hook-form';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registation = () => {
     const { register, handleSubmit } = useForm();
@@ -11,7 +11,7 @@ const Registation = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
-    if(user){
+    if (user) {
         navigate('/')
     }
 
@@ -32,16 +32,19 @@ const Registation = () => {
         }
     }
     return (
-        <div className='registation-style'>
-            <h2>this si registation page</h2>
+        <div className='main-style'>
+            <div className='registation-style'>
+                <h2>Registation Here</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder='name' type="text" {...register("name")} /> <br />
-                <input placeholder='Email' type="text" {...register("email")} /> <br />
-                <input placeholder='password' type="password" {...register("password")} /> <br />
-                <input placeholder='Confurm-Password' type="password" {...register("confurmPassword")} /> <br />
-                <input type="submit" value="SUBMIT" />
-            </form>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input placeholder='name' type="text" {...register("name")} required /> <br />
+                    <input placeholder='Email' type="text" {...register("email")} required /> <br />
+                    <input placeholder='password' type="password" {...register("password")} required /> <br />
+                    <input placeholder='Confurm-Password' type="password" {...register("confurmPassword")} required /> <br />
+                    <p>If You Are Already Registerd ,,, Then Go To  <Link className='login-link' to="/login">Login...</Link> </p>
+                    <input className='button' type="submit" value="SUBMIT" />
+                </form>
+            </div>
         </div>
     );
 };

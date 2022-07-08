@@ -3,16 +3,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import './Additem.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Additem = () => {
     const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
     const email = user.email;
-    // console.log(user.email);
     console.log(email);
 
     const onSubmit = data => {
-        // console.log(data)
         const url = `http://localhost:5000/bikeData?email=${email}`;
         fetch(url, {
             method: "POST",
@@ -24,7 +24,9 @@ const Additem = () => {
             .then(res => res.json())
             .then(postData => {
                 console.log("SuccessPost ==> ", postData)
+                toast("Added your Item SuccessFuly");
             })
+
     };
     // const { _id, name, image, description, price, quentity, suppliername } = data;
     //name :  BMW K1300R
@@ -34,6 +36,7 @@ const Additem = () => {
     return (
         <div className='main-form-style'>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <h5>Add Your Item Here</h5>
                 <input placeholder='name' type="text" {...register("name")} required /> <br />
                 <input placeholder='Email' type="text" {...register("email")} required /> <br />
                 <input placeholder='URL' type="text" {...register("image")} required /> <br />
@@ -41,8 +44,11 @@ const Additem = () => {
                 <input placeholder='quentity' type="number" {...register("quentity")} required /> <br />
                 <input placeholder='supplier-Name' type="text" {...register("suppliername")} required /> <br />
                 <textarea placeholder='description' type="text" {...register("description")} required /> <br />
-                <input type="submit" value="SUBMIT" />
+                <input className='button' type="submit" value="SUBMIT" />
             </form>
+            {/* <div className="tost"> */}
+                <ToastContainer className="tost" />
+            {/* </div> */}
         </div>
     );
 };

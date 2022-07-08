@@ -1,9 +1,21 @@
-.main-form-style{
-    padding-top: 70px;
+.main-form-style {
+    padding-top: 80px;
+    /* background-color: yellow; */
+    /* margin: 50px 0 0 0 ; */
 }
-.main-form-style form input, textarea{
+.main-form-style form{
+    box-shadow: 2px 2px 5px gray;
     width: 40%;
-    margin: 8px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    transition: all 0.5s;
+}
+.main-form-style form:hover{
+    box-shadow: 5px 5px 15px gray;
+}
+.main-form-style form input, textarea {
+    width: 100%;
+    /* margin: 8px; */
     border: 0;
     box-shadow: 2px 2px 5px gray;
     padding: 2px 10px;
@@ -11,4 +23,15 @@
     border-left: 1px solid gray;
     border-radius: 5px;
     outline: 0;
+}
+.main-form-style form .button{
+    color: green;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.main-form-style .tost {
+    /* background-color: aqua; */
+    padding: 10px;
+    margin-top: 50px;
 }

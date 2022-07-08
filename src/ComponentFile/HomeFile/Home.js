@@ -9,6 +9,7 @@ import BikerClubPage from './BikerClubFile/BikerClubPage';
 import GoogleMap from '../GoogleMapFile/GoogleMapjs';
 import Contact from '../ContactFIle/Contact';
 import Aos from 'aos';
+import Footer from '../FooterFile/Footer';
 // import 'aos/dist/aos.css';
 
 
@@ -92,6 +93,8 @@ const Home = () => {
                 {/* <GoogleMap></GoogleMap> */}
             </div>
             <Contact></Contact>
+
+            <Footer></Footer>
 
         </div>
     );

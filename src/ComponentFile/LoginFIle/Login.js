@@ -3,7 +3,7 @@ import './Login.css';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
@@ -25,17 +25,21 @@ const Login = () => {
 
     return (
         <div className='login-style'>
-            <h2>this is login style</h2>
+            <h2>Login Here</h2>
+            <div className="form-div">
 
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input placeholder='Email' type="text" {...register("email")} /> <br />
+                    <input placeholder='password' type="password" {...register("password")} /> <br />
+                    {
+                        error && <p style={{ color: "red" }}>{error.message}</p>
+                    }
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder='Email' type="text" {...register("email")} /> <br />
-                <input placeholder='password' type="password" {...register("password")} /> <br />
-                {
-                    error && <p style={{color : "red"}}>{error.message}</p>
-                }
-                <input type="submit" value="SUBMIT" />
-            </form>
+                    <p>If You Don't Registerd ,,, Then Go To  <Link className='login-link' to="/registation">Registation...</Link> First</p>
+                    <input className='button' type="submit" value="SUBMIT" />
+                </form>
+
+            </div>
         </div>
     );
 };

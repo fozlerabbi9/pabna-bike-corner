@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import useDynamicData from '../HookFile/useDynamicData';
 import './DynamicPage.css';
 import useDataLoad from '../HookFile/useDataLoad';
+import Footer from '../FooterFile/Footer';
 
 const DynamicPage = () => {
     const { dataId } = useParams();
@@ -84,62 +85,45 @@ const DynamicPage = () => {
     }
 
     return (
-        <div className='dynamic-page-style'>
+        <div>
+            <div className='dynamic-page-style'>
 
-            <div className="carousel">
-                <Carousel className='main-carousel'>
-                    {
-                        data.map(sdata => <Carousel.Item interval={3000} className="carousel-item" key={sdata._id} >
-                            <img className="img-style" src={sdata.image}
-                                alt="First slide"
-                            />
-                        </Carousel.Item>)
-                    }
-                    {/* <Carousel.Item interval={2000} className="carousel-item" >
-                        <img className="img-style" src="https://monochrome-watches.com/wp-content/uploads/2022/04/William-Wood-Watches-Saltire-Motorcycles-Always-Ready-Motorbike-Custom-Indian-Scout-4.jpg"
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item interval={2000} className="carousel-item">
-                        <img
-                            className="img-style"
-                            src="https://cdn.wallpapersafari.com/70/1/Im1QrM.jpg"
-                            alt="Second slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item interval={2000} className="carousel-item">
-                        <img
-                            className="img-style"
-                            src="https://wallpaperaccess.com/full/217666.jpg"
-                            alt="Third slide"
-                        />
-                    </Carousel.Item> */}
-                </Carousel>
-            </div>
+                <div className="carousel">
+                    <Carousel className='main-carousel'>
+                        {
+                            data.map(sdata => <Carousel.Item interval={3000} className="carousel-item" key={sdata._id} >
+                                <img className="img-style" src={sdata.image}
+                                    alt="First slide"
+                                />
+                            </Carousel.Item>)
+                        }
+                    </Carousel>
+                </div>
 
-            <div className="count-div">
-                <div className="dynamic-data-style">
-                    <img className='img-fluid' src={image} alt="" />
-                    <div className="info">
-                        <p>name : {name}</p>
-                        <p>price : {price} Lakh</p>
-                        <p>quentity : {countQuintity}</p>
-                        <p>description : {description}</p>
-                        <p>suppliername : {suppliername}</p>
+                <div className="count-div">
+                    <div className="dynamic-data-style">
+                        <img className='img-fluid' src={image} alt="" />
+                        <div className="info">
+                            <p>name : {name}</p>
+                            <p>price : {price} Lakh</p>
+                            <p>quentity : {countQuintity}</p>
+                            <p>description : {description}</p>
+                            <p>suppliername : {suppliername}</p>
+                        </div>
+                    </div>
+
+                    <div className="simple-form">
+                        <h4>Quintity = {countQuintity}</h4>
+                        <button className='button' onClick={() => updateDataFun(countQuintity)}>Delivered</button>
+                        <form onSubmit={addQuintity}>
+                            <Form.Control onBlur={getNumber} type="number" placeholder="Add Quintity" required />
+                            <Button type="submit"> Added </Button>
+                        </form>
                     </div>
                 </div>
-
-                <div className="simple-form">
-                    <h4>Quintity = {countQuintity}</h4>
-                    <button className='button' onClick={() => updateDataFun(countQuintity)}>Delivered</button>
-                    <form onSubmit={addQuintity}>
-                        <Form.Control onBlur={getNumber} type="number" placeholder="Add Quintity" required />
-                        <Button type="submit"> Added </Button>
-                    </form>
-                </div>
-            </div>
-
-        </div >
+            </div >
+            <Footer></Footer>
+        </div>
     );
 };
 

@@ -35,6 +35,7 @@
 
 .count-div {
     display: flex;
+    padding: 70px 0;
 }
 
 .count-div .simple-form {

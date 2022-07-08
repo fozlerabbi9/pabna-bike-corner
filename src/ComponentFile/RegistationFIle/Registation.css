@@ -1,3 +1,60 @@
-.registation-style{
-    padding-top: 55px;
+.main-style {
+    background-color: aqua;
+    height: 100vh;
+    background-image: url("https://bestwallpapers.in/wp-content/uploads/2018/05/ghost-rider-movie-fire-bike-4k-wallpaper-3415x2500.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.registation-style {
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.registation-style h2 {
+    color: red;
+    /* padding: 45px 5px 20px; */
+    margin: 50px 0 30px;
+}
+
+.registation-style form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.registation-style form input {
+    background-color: rgba(143, 142, 142, 0.4);
+    border: 0;
+    box-shadow: 1px 1px 7px whitesmoke;
+    color: white;
+    border-radius: 30px;
+}
+
+.registation-style form .button {
+    border-radius: 0;
+    width: 25%;
+    transition: all 0.5s;
+    border-radius: 5px;
+    /* padding: 5px 35px; */
+}
+
+.registation-style form .button:hover {
+    box-shadow: 2px 4px 15px yellow;
+    background-color: rgba(247, 6, 6, 0.4);
+}
+
+.registation-style form p {
+    color: white;
+}
+
+.registation-style form .login-link {
+    color: red;
+    text-decoration: none;
+
 }
