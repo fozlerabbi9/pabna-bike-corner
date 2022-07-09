@@ -13,7 +13,7 @@ const Additem = () => {
     console.log(email);
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/bikeData?email=${email}`;
+        const url = `http://https://pabna-bike-corner.herokuapp.com/bikeData?email=${email}`;
         fetch(url, {
             method: "POST",
             headers: {

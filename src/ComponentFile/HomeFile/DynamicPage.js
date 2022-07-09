@@ -35,7 +35,7 @@ const DynamicPage = () => {
             quentity: newQuintity,
             suppliername: suppliername,
         }
-        const url = `http://localhost:5000/bikeData/${dataId}`;
+        const url = `http://https://pabna-bike-corner.herokuapp.com/bikeData/${dataId}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -68,7 +68,7 @@ const DynamicPage = () => {
             quentity: totalBike,
             suppliername: suppliername,
         }
-        const url = `http://localhost:5000/bikeData/${dataId}`;
+        const url = `http://https://pabna-bike-corner.herokuapp.com/bikeData/${dataId}`;
         fetch(url, {
             method: "PUT",
             headers: {

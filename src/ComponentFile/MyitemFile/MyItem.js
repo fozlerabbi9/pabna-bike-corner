@@ -12,7 +12,7 @@ const MyItem = () => {
     // console.log(filterData);
     // console.log(user.email);
     useEffect(() => {
-        fetch(`http://localhost:5000/bikeData`)
+        fetch(`http://https://pabna-bike-corner.herokuapp.com/bikeData`)
             .then(res => res.json())
             .then(mydata => setMyData(mydata))
     }, [])
